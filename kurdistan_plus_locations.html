@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>کوردستان پلاس | زانیاری و گەشتیاری</title>
+<style>
+:root{--g:#0b5d45;--g2:#083e30;--gold:#f3c64d;--bg:#f4f7f6;--card:#fff;--text:#15231e;--muted:#71807a;--line:#e3ebe7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--text)}
+header{position:sticky;top:0;z-index:20;background:#073d30ee;backdrop-filter:blur(12px);color:#fff;border-bottom:1px solid #ffffff20}
+nav{max-width:1250px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}.logo{font-size:26px;font-weight:900}.logo b{color:var(--gold)}nav a{color:#fff;text-decoration:none;font-size:14px;margin:0 8px}
+.hero{min-height:500px;padding:80px 22px 60px;background:radial-gradient(circle at 80% 20%,#24785c55,transparent 35%),linear-gradient(135deg,#062f25,#0b5d45 55%,#164c3d);color:#fff;text-align:center}
+.hero h1{font-size:clamp(34px,6vw,64px);margin:18px 0 10px}.hero p{font-size:18px;color:#d8ebe4}.search{max-width:760px;margin:30px auto;display:flex;background:#fff;border-radius:18px;padding:7px;box-shadow:0 15px 45px #0004}.search input{flex:1;border:0;outline:0;padding:15px;font-size:16px}.btn{border:0;background:var(--g);color:#fff;padding:12px 18px;border-radius:12px;font-weight:bold;cursor:pointer}.gold{background:var(--gold);color:#17231e}.stats{max-width:1000px;margin:-42px auto 0;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:0 20px}.stat{background:#fff;border:1px solid var(--line);box-shadow:0 12px 35px #0001;border-radius:18px;padding:18px;text-align:center}.stat strong{font-size:27px;color:var(--g);display:block}.wrap{max-width:1250px;margin:auto;padding:55px 22px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:22px}.section-head h2{font-size:30px;margin:0 0 7px}.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 7px 25px #1231;transition:.2s}.card:hover{transform:translateY(-4px);box-shadow:0 14px 32px #1232}.city{cursor:pointer;position:relative;overflow:hidden}.city:after{content:"";position:absolute;left:-25px;bottom:-45px;width:110px;height:110px;background:#0b5d4510;border-radius:50%}.icon{font-size:40px}.city h3{margin:12px 0 5px}.tag{display:inline-block;margin-top:10px;background:#eaf5f0;color:var(--g);padding:6px 10px;border-radius:30px;font-size:12px}
+.feature{display:grid;grid-template-columns:1.5fr 1fr;gap:18px}.weather{background:linear-gradient(145deg,#0b5d45,#083e30);color:#fff;border-radius:22px;padding:26px}.weather .temp{font-size:55px;font-weight:900}.weather small{color:#cfe7df}.place{min-height:150px}.place h3{margin:8px 0}.place p{color:var(--muted);line-height:1.8}
+.newsgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.news b{color:var(--g)}.news time{font-size:12px;color:var(--muted)}
+.city-page{display:none!important}.city-page.active{display:block!important}.back{margin-bottom:18px}.city-hero{background:linear-gradient(135deg,#0b5d45,#0a4334);color:white;border-radius:24px;padding:30px;margin-bottom:18px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.tabs button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 14px;cursor:pointer}.tabs button.active{background:var(--g);color:#fff;border-color:var(--g)}.tab{display:none}.tab.active{display:block}.list{list-style:none;padding:0;margin:0}.list li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}.mapbox{min-height:260px;border-radius:20px;background:repeating-linear-gradient(45deg,#e9f0ed,#e9f0ed 10px,#e3ece8 10px,#e3ece8 20px);display:grid;place-items:center;color:var(--g);font-size:20px;font-weight:bold}
+footer{background:#062d24;color:#d5e7e0;padding:40px 22px;text-align:center;margin-top:20px}
+@media(max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.feature,.newsgrid{grid-template-columns:1fr}nav a{display:none}}
+@media(max-width:450px){.stats{grid-template-columns:1fr 1fr}.search{flex-direction:column}.search .btn{width:100%}}
+</style></head>
+<body>
+<header><nav><div class="logo">کوردستان<b>+</b></div><div><a href="#" onclick="home()">سەرەتا</a><a href="#cities">شارەکان</a><a href="#tourism">گەشتیاری</a><a href="#news">هەواڵ</a></div><button class="btn gold" onclick="document.getElementById('cities').scrollIntoView()">دەست پێ بکە</button></nav></header>
+
+<main id="homePage">
+<section class="hero">
+<div class="tag" style="background:#ffffff20;color:#fff">KURDISTAN INFORMATION HUB</div>
+<h1>کوردستان لە یەک شوێن 🇹🇯</h1>
+<p>شارەکان، لۆکەیشنەکان، گەشتیاری، کەش و هەوا و هەواڵە نوێکان.</p>
+<div class="search"><input id="q" placeholder="بگەڕێ: هەولێر، کۆیە، ڕێستورانت..." oninput="filter()"><button class="btn" onclick="filter()">گەڕان 🔎</button></div>
+</section>
+<div class="stats"><div class="stat"><strong>4</strong>پارێزگا</div><div class="stat"><strong>3000+</strong>شوێنی گەشتیاری</div><div class="stat"><strong>3500+</strong>شوێنی مێژوویی</div><div class="stat"><strong>∞</strong>شار و ناوچە</div></div>
+
+<section class="wrap" id="cities">
+<div class="section-head"><div><h2>شارەکان</h2><div class="muted">شار هەڵبژێرە → پاشان بەشەکەت هەڵبژێرە</div></div></div>
+<div class="grid" id="citiesGrid"></div>
+</section>
+
+<section class="wrap" id="tourism">
+<div class="section-head"><div><h2>شوێنە گەشتیارییەکان</h2><div class="muted">سروشت، مێژوو و شوێنە جوانەکان</div></div></div>
+<div class="grid">
+<div class="card place"><div class="icon">🏛️</div><h3>قەڵای هەولێر</h3><p>یەکێک لە ناسراوترین شوێنە مێژووییەکانی کوردستان.</p></div>
+<div class="card place"><div class="icon">💦</div><h3>ئەحمەداوا</h3><p>ناوچەیەکی سروشتی بە دۆڵ و ئاوی ڕوون.</p></div>
+<div class="card place"><div class="icon">🏔️</div><h3>ئامێدی</h3><p>شاری مێژوویی لەسەر سەرەوەی شاخ و دۆڵ.</p></div>
+<div class="card place"><div class="icon">🌊</div><h3>دەریاچەی دوکان</h3><p>شوێنێکی ناسراو بۆ سروشت و گەشت.</p></div>
+</div>
+</section>
+
+<section class="wrap">
+<div class="feature">
+<div class="card"><h2>🌤️ کەش و هەوای شارەکان</h2><p class="muted">داتای ڕاستەوخۆی کەش و هەوا بۆ هەر شارێک لە پەڕەی تایبەتییەکەی پیشان دەدرێت.</p><div class="grid" id="weatherCards"></div></div>
+<div class="weather"><small>پێشبینی گشتی</small><h2>کوردستان</h2><div class="temp">🌤️</div><p>کەش و هەوا لە ناوچە شاخستانییەکاندا زۆر جیاوازە.</p></div>
+</div>
+</section>
+
+<section class="wrap" id="news">
+<div class="section-head"><div><h2>📰 هەواڵ</h2><div class="muted">بەشی هەواڵ بۆ نوێکردنەوەی خۆکار ئامادەکراوە</div></div></div>
+<div class="newsgrid">
+<div class="card news"><b>هەواڵی هەولێر</b><h3>نوێکردنەوەی زانیاری شار</h3><time>بەشی هەواڵ</time><p class="muted">لە وەشانی زنده‌دا هەواڵەکان بە شێوەی خۆکار نوێ دەکرێنەوە.</p></div>
+<div class="card news"><b>گەشتیاری</b><h3>شوێنە گەشتیارییەکان</h3><time>زانیاری</time><p class="muted">کوردستان شوێنە سروشتی و مێژووییە زۆری هەیە بۆ سەردان.</p></div>
+<div class="card news"><b>خزمەتگوزاری</b><h3>لۆکەیشن و نەخشە</h3><time>Map</time><p class="muted">لە قۆناغی داهاتوودا نەخشە و ڕێنمایی گەیشتن زیاد دەکرێت.</p></div>
+</div>
+</section>
+</main>
+
+<div id="pages"></div>
+<footer>کوردستان+ © 2026 — زانیاری، گەشتیاری و شارەکان لە یەک شوێن</footer>
+
+<script>
+const cities=[
+["هەولێر","🏙️","پایتەختی هەرێمی کوردستان",["قەڵای هەولێر","بازاڕی قەیسەری","مەنارەی مظفەریە (چوولی)","پارکی سامی عبدالرحمن","پارکی شانەدەر","مۆزەخانەی کۆمەڵەی کوردی","شەقڵاوە","کۆرەک"],["هوتێلەکان","ڕێستورانتەکان","کافێکان","نەخۆشخانەکان"]],
+["سلێمانی","🌆","شاری کەلتوور و هونەر",["بازاڕی سلێمانی","مۆزەخانەی سلێمانی","ئەمنا سورەک","مۆزەخانەی هونەر","شاخی ئەزمەر","شاخی گۆیژە","دوکان","دەربەندیخان"],["هوتێلەکان","ڕێستورانتەکان","کافێکان","نەخۆشخانەکان"]],
+["دهۆک","🏔️","شاری دۆڵ و شاخ",["بەندی ئاوی دهۆک","شاخی زاوا","بازاڕی کۆنی دهۆک","پارکی دهۆک","لالش","ئامێدی","سولاف","زاخۆ"],["هوتێلەکان","ڕێستورانتەکان","کافێکان","نەخۆشخانەکان"]],
+["هەڵەبجە","🌿","شاری مێژوو و یادەوەری",["مۆنۆمێنتی هەڵەبجە","مۆزەخانەی هەڵەبجە","ناوچەکانی هەورامان","تاوێلا","سەید سادق","سەرچاوە و گوندە سروشتییەکان"],["هوتێلەکان","ڕێستورانتەکان","کافێکان","نەخۆشخانەکان"]],
+["کۆیە","🏘️","شارێکی مێژوویی و کەلتووری",["قەڵای کۆیە","بازاڕی کۆیە","مزگەوت و شوێنە مێژووییەکان","سەرچاوە و ناوچە سروشتییەکان"],["هوتێلەکان","ڕێستورانتەکان","کافێکان"]],
+["ڕەواندز","⛰️","ناوچەی شاخستانی و گەشتیاری",["کەنیاری ڕەواندز","کەلی عەلی بەگ","شەلالی بەخال","شاخی کۆرەک","ڕێگای هەمیلەتۆن","شوێنی بینینەکانی ڕەواندز"],["هوتێلەکان","مۆتێلەکان","ڕێستورانتەکان","کافێکان"]],
+["ئاکرێ","🏔️","شاری نیورۆز و کۆڵانە کۆنەکان",["شارە کۆنەکەی ئاکرێ","شاخەکانی ئاکرێ","شوێنی بینینەکانی ئاکرێ","بازاڕ و کۆڵانە کۆنەکان"],["هوتێلەکان","ڕێستورانتەکان","کافێکان"]],
+["ئامێدی","🏰","شاری مێژوویی لەسەر شاخ",["دەروازەی موسڵ","مەنارەی ئامێدی","قەڵای ئامێدی","پانۆرامای دۆڵی سپنا","شاخی گارا","سولاف"],["هوتێلەکان","ڕێستورانتەکان","کافێکان","ناوەندە تەندروستییەکان"]],
+["زاخۆ","🌉","شاری بازرگانی و مێژوویی",["پردی دلال","بازاڕی زاخۆ","ڕووباری خابوور","شوێنە کۆنەکان"],["هوتێلەکان","ڕێستورانتەکان","کافێکان"]],
+["شەقڵاوە","🌲","ناوچەی هاوینە و شاخستانی",["شاخی سەفین","ناوچەی سەنتەر","سەرچاوە و باغەکان","شوێنەکانی بینین"],["هوتێلەکان","ڕێستورانتەکان","کافێکان"]]
+];
+
+function render(){
+document.getElementById("citiesGrid").innerHTML=cities.map((c,i)=>`<div class="card city" data-name="${c[0]}" onclick="openCity(${i})"><div class="icon">${c[1]}</div><h3>${c[0]}</h3><p class="muted">${c[2]}</p><span class="tag">بینینی هەموو بەشەکان ←</span></div>`).join("");
+document.getElementById("weatherCards").innerHTML=cities.slice(0,4).map((c,i)=>`<div class="card" style="padding:15px"><b>${c[1]} ${c[0]}</b><div style="font-size:25px;margin-top:8px">🌤️ —°</div><small class="muted">کەش و هەوا</small></div>`).join("");
+document.getElementById("pages").innerHTML=cities.map((c,i)=>`
+<section class="wrap city-page" id="page${i}">
+<button class="btn" onclick="home()">← گەڕانەوە</button>
+<div class="city-hero"><div class="icon">${c[1]}</div><h1>${c[0]}</h1><p>${c[2]}</p></div>
+<div class="tabs">
+<button class="active" onclick="tab(this,'overview${i}')">🏠 سەرەکی</button>
+<button onclick="tab(this,'locations${i}')">📍 لۆکەیشنەکان</button>
+<button onclick="tab(this,'weather${i}')">🌤️ کەش و هەوا</button>
+<button onclick="tab(this,'hotels${i}')">🏨 هوتێلەکان</button>
+<button onclick="tab(this,'food${i}')">🍽️ خواردن</button>
+<button onclick="tab(this,'news${i}')">📰 هەواڵ</button>
+</div>
+<div id="overview${i}" class="tab active"><div class="grid"><div class="card"><h3>📌 بەشەکان</h3><ul class="list">${c[4].map(x=>`<li>${x}<span>›</span></li>`).join("")}</ul></div><div class="weather"><small>کەش و هەوا</small><div class="temp">🌤️ —°</div><p>داتای ڕاستەوخۆ لە قۆناغی API ـدا زیاد دەکرێت.</p></div></div></div>
+<div id="locations${i}" class="tab"><div class="card"><h2>📍 لۆکەیشنەکانی ${c[0]}</h2><div class="mapbox">🗺️ ${c[0]} — لۆکەیشنەکان لە Google Maps</div><ul class="list">${c[3].map(x=>`<li><b>${x}</b><button class="btn" onclick="openMap('${x}','${c[0]}')">📍 نەخشە</button></li>`).join("")}</ul></div></div>
+<div id="weather${i}" class="tab"><div class="weather"><h2>🌤️ کەش و هەوای ${c[0]}</h2><div class="temp">—°</div><p>پێشبینی ڕۆژانە و داتای ڕاستەوخۆ لەم بەشەدا جێگیر دەکرێت.</p></div></div>
+${["hotels","food","news"].map((t,j)=>`<div id="${t}${i}" class="tab"><div class="card"><h2>${j==0?"🏨 هوتێلەکان":j==1?"🍽️ ڕێستورانت و کافێکان":"📰 هەواڵی "+c[0]}</h2><ul class="list">${(j<2?c[4].slice(j,j+3):["هەواڵی تازە","ڕووداوەکان","زانیاری شار"]).map(x=>`<li>${x}<span>›</span></li>`).join("")}</ul></div></div>`).join("")}
+</section>`).join("");
+}
+function openCity(i){
+  const homePage=document.getElementById("homePage");
+  const page=document.getElementById("page"+i);
+  if(!page)return;
+  homePage.style.display="none";
+  document.querySelectorAll(".city-page").forEach(x=>x.classList.remove("active"));
+  page.classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function home(){
+  document.getElementById("homePage").style.display="block";
+  document.querySelectorAll(".city-page").forEach(x=>x.classList.remove("active"));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function tab(button,id){
+  const page=button.closest(".city-page");
+  if(!page)return;
+  page.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  const panel=page.querySelector("#"+id);
+  if(!panel)return;
+  panel.classList.add("active");
+  page.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("active"));
+  button.classList.add("active");
+}
+function openMap(place,city){
+  const q=encodeURIComponent(place+" "+city+" Kurdistan Iraq");
+  window.open("https://www.google.com/maps/search/?api=1&query="+q,"_blank");
+}
+function filter(){let q=document.getElementById("q").value.trim();document.querySelectorAll(".city").forEach(x=>x.style.display=(!q||x.dataset.name.includes(q))?"block":"none")}
+render();
+</script>
+</body></html>
